@@ -1,0 +1,24 @@
+# backend/app/schemas/sale_schema.py
+from pydantic import BaseModel
+from typing import Optional
+from uuid import UUID
+from datetime import datetime
+
+class SaleCreate(BaseModel):
+    item_id: UUID
+    quantity: int
+    rate: float
+    gst_percent: Optional[float] = 0.0
+
+class SaleRead(BaseModel):
+    id: UUID
+    item_id: UUID
+    quantity: int
+    rate: float
+    gst_percent: float
+    total_amount: float
+    cogs: Optional[float]
+    created_at: datetime
+
+    class Config:
+        orm_mode = True

@@ -24,7 +24,7 @@ root/
 
 ```
 backend/
- ├── api/
+ ├── app/api/
  │   ├── v1/
  │   │   ├── routes/
  │   │   │   ├── auth.py
@@ -40,13 +40,13 @@ backend/
  │   │   └── __init__.py
  │   └── __init__.py
  │
- ├── core/
+ ├── app/core/
  │   ├── config.py
  │   ├── security.py
  │   ├── logging.py
  │   └── utils.py
  │
- ├── db/
+ ├── app/db/
  │   ├── base.py
  │   ├── session.py
  │   ├── models/
@@ -65,21 +65,21 @@ backend/
  │   │   └── README
  │   └── __init__.py
  │
- ├── factories/
+ ├── app/factories/
  │   ├── inventory_factory.py
  │   ├── gst_factory.py
  │   ├── profit_factory.py
  │   ├── storage_factory.py
  │   └── __init__.py
  │
- ├── services/
+ ├── app/services/
  │   ├── fifo_service.py
  │   ├── gst_service.py
  │   ├── profit_service.py
  │   ├── document_service.py
  │   └── __init__.py
  │
- ├── schemas/
+ ├── app/schemas/
  │   ├── auth_schema.py
  │   ├── user_schema.py
  │   ├── item_schema.py
@@ -92,12 +92,12 @@ backend/
  │   ├── document_schema.py
  │   └── __init__.py
  │
- ├── uploads/
+ ├── app/uploads/
  │   ├── purchases/
  │   ├── sales/
  │   └── misc/
  │
- ├── tests/
+ ├── app/tests/
  │   ├── test_auth.py
  │   ├── test_fifo.py
  │   ├── test_gst.py
@@ -106,66 +106,68 @@ backend/
  │   ├── test_crud_transactions.py
  │   └── __init__.py
  │
- ├── main.py
+ ├── app/main.py
  ├── requirements.txt
  ├── Dockerfile
+ ├── alembic.ini
+ ├── .env
  └── README.md
 ```
 
 ---
 
-# 3. Frontend Structure (Next.js 14)
+# 3. Frontend Structure (Next.ts 14)
 
 ```
 frontend/
  ├── app/
  │   ├── login/
- │   │   └── page.jsx
+ │   │   └── page.tsx
  │   ├── dashboard/
- │   │   └── page.jsx
+ │   │   └── page.tsx
  │   ├── items/
- │   │   └── page.jsx
+ │   │   └── page.tsx
  │   ├── purchases/
- │   │   └── page.jsx
+ │   │   └── page.tsx
  │   ├── sales/
- │   │   └── page.jsx
+ │   │   └── page.tsx
  │   ├── expenses/
- │   │   └── page.jsx
+ │   │   └── page.tsx
  │   ├── investments/
- │   │   └── page.jsx
+ │   │   └── page.tsx
  │   ├── documents/
- │   │   └── page.jsx
+ │   │   └── page.tsx
  │   ├── analytics/
- │   │   └── page.jsx
- │   ├── layout.jsx
+ │   │   └── page.tsx
+ │   ├── layout.tsx
  │   ├── globals.css
- │   └── middleware.js
+ │   └── middleware.ts
  │
  ├── components/
- │   ├── Navbar.jsx
- │   ├── Sidebar.jsx
- │   ├── Card.jsx
- │   ├── Chart.jsx
- │   └── Loader.jsx
+ │   ├── Navbar.tsx
+ │   ├── Sidebar.tsx
+ │   ├── Card.tsx
+ │   ├── Chart.tsx
+ │   └── Loader.tsx
  │
  ├── services/
- │   ├── apiClient.js
- │   ├── authService.js
- │   ├── itemsService.js
- │   ├── purchaseService.js
- │   ├── salesService.js
- │   ├── expenseService.js
- │   ├── investmentService.js
- │   ├── analyticsService.js
- │   ├── gstService.js
- │   └── documentService.js
+ │   ├── apiClient.ts
+ │   ├── authService.ts
+ │   ├── itemsService.ts
+ │   ├── purchaseService.ts
+ │   ├── salesService.ts
+ │   ├── expenseService.ts
+ │   ├── investmentService.ts
+ │   ├── analyticsService.ts
+ │   ├── gstService.ts
+ │   └── documentService.ts
  │
  ├── hooks/
- │   ├── useAuth.js
- │   └── useApi.js
+ │   ├── useAuth.ts
+ │   └── useApi.ts
  │
  ├── utils/
- │   └── helpers.js
+ │   └── helpers.ts
  │
  ├── public/
  ├── Dockerfile

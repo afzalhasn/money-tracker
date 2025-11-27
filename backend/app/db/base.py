@@ -1,3 +1,4 @@
-from app.db.models.user import User
-from app.db.models.item import Item
-# more models will be imported later
+# backend/app/db/base.py
+from sqlalchemy.orm import declarative_base
+
+Base = declarative_base()

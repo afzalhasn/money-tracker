@@ -8,7 +8,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      DATABASE_URL: postgresql://admin:admin@db:5433/moneytracker
+      DATABASE_URL: postgresql://admin:admin@db:5432/moneytracker
       ENV: development
     volumes:
       - ./backend:/app
@@ -34,7 +34,7 @@ services:
     container_name: moneytracker_db
     restart: unless-stopped
     ports:
-      - "5433:5433"
+      - "5432:5432"
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
