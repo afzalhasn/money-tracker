@@ -8,6 +8,8 @@ services:
     ports:
       - "8000:8000"
     environment:
+      # When running inside Docker Compose the backend should connect to
+      # the Postgres service by its service name (db) on the container port 5432
       DATABASE_URL: postgresql://admin:admin@db:5432/moneytracker
       ENV: development
     volumes:
