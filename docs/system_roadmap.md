@@ -30,10 +30,10 @@
 - **Phase A – API Foundation**
   - Epic: Backend CRUD infrastructure
     - User Story: As a backend developer, I want item CRUD scaffolding so the API can persist catalog data.
-      - Tasks:
-        - Define `ItemUpdate` in `backend/app/schemas/item_schema.py` so updates stay typed while reusing existing DTOs.
-        - Implement `backend/app/services/item_service.py` with `create_item`, `get_item`, and `list_items` functions that open a session, call the `Item` model, and return ORM objects.
-        - Build `backend/app/api/v1/routes/items.py` to mount a `router = APIRouter(prefix="/items")` exposing `POST /items/` and `GET /items/` using the new service and schemas.
+    - Tasks:
+        - [x] Define `ItemUpdate` in `backend/app/schemas/item_schema.py` so updates stay typed while reusing existing DTOs.
+        - [x] Implement `backend/app/services/item_service.py` with `create_item`, `get_item`, and `list_items` functions that open a session, call the `Item` model, and return ORM objects.
+        - [x] Build `backend/app/api/v1/routes/items.py` to mount a `router = APIRouter(prefix="/items")` exposing `POST /items/` and `GET /items/` using the new service and schemas.
     - User Story: As a backend developer, I need purchases to create FIFO batches so stock tracking begins.
       - Tasks:
         - Expand `backend/app/schemas/purchase_schema.py` with `PurchaseCreate` and `PurchaseRead` models covering `item_id`, `quantity`, `rate`, `gst_percent`, `invoice_number`, and timestamps.
