@@ -22,8 +22,26 @@ def get_item(db: Session, item_id) -> Item | None:
     return db.query(Item).filter(Item.id == item_id).first()
 
 
-def list_items(db: Session, skip: int = 0, limit: int = 100):
-    # Query the database, then log and return the paginated records.
+def list_items(db: Session, skip: int = 0, limit: int = 100) -> List[Item]:
+    """
+    Retrieve a paginated list of items from the database.
+    
+    Args:
+        db (Session): SQLAlchemy database session for executing queries.
+        skip (int, optional): Number of items to skip from the beginning. Defaults to 0.
+        limit (int, optional): Maximum number of items to return. Defaults to 100.
+    
+    Returns:
+        List[Item]: A list of Item objects matching the query criteria.
+    
+    Raises:
+        None
+    
+    Example:
+        >>> items = list_items(db, skip=10, limit=50)
+        >>> print(len(items))
+        50
+    """
     result = db.query(Item).offset(skip).limit(limit).all()
     logger.info("Listed %d items from the database", len(result))
     return result
