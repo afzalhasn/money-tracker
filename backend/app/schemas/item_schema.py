@@ -10,6 +10,13 @@ class ItemCreate(BaseModel):
     unit: Optional[str] = None
     low_stock_threshold: Optional[int] = 0
 
+class ItemUpdate(BaseModel):
+    name: Optional[str] = None
+    sku: Optional[str] = None
+    unit: Optional[str] = None
+    low_stock_threshold: Optional[int] = None
+    cached_stock: Optional[int] = None
+
 class ItemRead(BaseModel):
     id: UUID
     name: str
