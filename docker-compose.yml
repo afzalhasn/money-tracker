@@ -54,5 +54,17 @@ services:
     depends_on:
       - db
 
+  mcp:
+    build:
+      context: ./mcp
+    container_name: moneytracker_mcp
+    ports:
+      - "9000:9000"
+    environment:
+      DB_URL: postgresql://admin:admin@db:5432/moneytracker
+    depends_on:
+      - db
+
+
 volumes:
   db_data:

@@ -1,5 +1,6 @@
 # Use Node 20.19 Alpine (lightweight)
-FROM node:20-bullseye
+#FROM node:20-bullseye
+FROM node:20-alpine
 
 # Set working directory
 WORKDIR /app

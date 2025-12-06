@@ -3,3 +3,6 @@ node_modules/
 .env
 docker/*.log
 venv/
+.DS_Store
+.codexignore
+.vscode/
