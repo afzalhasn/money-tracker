@@ -35,6 +35,26 @@ def test_create_sale_consumes_fifo_stock(test_client):
     )
 
 
+def test_read_sales_returns_history(test_client):
+    """Sales listing should return the previously recorded entries."""
+    data = seed_phase_a_data(
+        test_client,
+        purchase={"quantity": 8, "rate": 50.0},
+    )
+    sale_response = create_sale(
+        test_client,
+        data["item"]["id"],
+        quantity=3,
+        rate=120.0,
+        gst_percent=5.0,
+    )
+
+    list_response = test_client.get("/api/v1/sales/")
+    assert list_response.status_code == 200
+    ids = {entry["id"] for entry in list_response.json()}
+    assert sale_response["id"] in ids
+
+
 def test_sale_rejected_when_stock_insufficient(test_client):
     """Attempting to sell more than available inventory should return 400."""
     data = seed_phase_a_data(

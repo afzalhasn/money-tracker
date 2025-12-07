@@ -20,3 +20,10 @@ def test_read_purchases_returns_created_batches(test_client):
     response = test_client.get("/api/v1/purchases/")
     assert response.status_code == 200
     assert any(batch["item_id"] == item["id"] for batch in response.json())
+
+
+def test_read_purchases_empty_returns_list(test_client):
+    """Listing purchases should work even when no batches exist."""
+    response = test_client.get("/api/v1/purchases/")
+    assert response.status_code == 200
+    assert isinstance(response.json(), list)

@@ -25,3 +25,11 @@ def test_list_items_returns_created_rows(test_client):
     names = {entry["name"] for entry in list_response.json()}
     assert "Widget Beta" in names
     assert "Widget Gamma" in names
+
+
+def test_get_item_not_found_returns_404(test_client):
+    """Requesting a missing item returns HTTP 404."""
+    missing_uuid = "00000000-0000-0000-0000-000000000000"
+    response = test_client.get(f"/api/v1/items/{missing_uuid}")
+    assert response.status_code == 404
+    assert response.json()["detail"] == "Item not found"

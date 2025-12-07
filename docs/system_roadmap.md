@@ -63,9 +63,9 @@
         - [x] Develop `backend/app/api/v1/routes/gst.py` to expose `/gst/summary` that aggregates `gst_input`, `gst_output`, and `difference`.
     - User Story: As a profit analyst, I want aggregated metrics so dashboards can chart performance.
       - Tasks:
-        - Flesh out `backend/app/services/profit_service.py` to aggregate sales totals, COGS, and expenses, returning gross/net profit.
-        - Define `ProfitSummary` in `backend/app/schemas/analytics_schema.py`.
-        - Hook `backend/app/api/v1/routes/analytics.py` to serve `/analytics/profit-summary` and `/analytics/stock-levels`.
+        - [x] Flesh out `backend/app/services/profit_service.py` to aggregate sales totals, COGS, and expenses, returning gross/net profit.
+        - [x] Define `ProfitSummary` in `backend/app/schemas/analytics_schema.py`.
+        - [x] Hook `backend/app/api/v1/routes/analytics.py` to serve `/analytics/profit-summary` and `/analytics/stock-levels`.
 
 - **Phase C – Frontend UI & Token Flow**
   - Epic: Authentication & layout
