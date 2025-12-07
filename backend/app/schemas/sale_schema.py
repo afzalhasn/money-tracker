@@ -18,6 +18,7 @@ class SaleRead(BaseModel):
     gst_percent: float
     total_amount: float
     cogs: Optional[float]
+    remaining_stock: Optional[int] = None
     created_at: datetime
 
     class Config:
