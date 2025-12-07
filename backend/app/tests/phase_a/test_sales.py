@@ -1,6 +1,6 @@
 import pytest
 
-from tests.data_generator import (
+from .data_generator import (
     build_sale_payload,
     create_sale,
     seed_phase_a_data,

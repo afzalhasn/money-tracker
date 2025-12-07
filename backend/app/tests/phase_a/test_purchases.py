@@ -1,4 +1,4 @@
-from tests.data_generator import create_item, create_purchase
+from .data_generator import create_item, create_purchase
 
 
 def test_create_purchase_records_stock(test_client):

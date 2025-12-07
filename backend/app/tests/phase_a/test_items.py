@@ -1,4 +1,4 @@
-from tests.data_generator import build_item_payload, create_item
+from .data_generator import build_item_payload, create_item
 
 
 def test_create_item_and_retrieve(test_client):
