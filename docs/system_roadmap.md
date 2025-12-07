@@ -55,12 +55,12 @@
       - Tasks:
         - [x] Implement `backend/app/services/fifo_service.py` logic to fetch oldest `PurchaseBatch` rows, subtract quantities, and return consumed batches.
         - [x] Persist COGS results inside `Sale` records during `create_sale`.
-        - [ ] Create `backend/app/factories/inventory_factory.py` that exposes the FIFO engine so future LIFO implementations can swap in.
+        - [x] Create `backend/app/factories/inventory_factory.py` that exposes the FIFO engine so future LIFO implementations can swap in.
     - User Story: As the treasury module, I need GST summaries to capture input/output ledgers.
       - Tasks:
-        - Create `backend/app/services/gst_service.py` functions to log `GSTLedger` entries based on purchase/sale payloads.
-        - Build `backend/app/factories/gst_factory.py` to surface the GST calculator interface.
-        - Develop `backend/app/api/v1/routes/gst.py` to expose `/gst/summary` that aggregates `gst_input`, `gst_output`, and `difference`.
+        - [x] Create `backend/app/services/gst_service.py` functions to log `GSTLedger` entries based on purchase/sale payloads.
+        - [x] Build `backend/app/factories/gst_factory.py` to surface the GST calculator interface.
+        - [x] Develop `backend/app/api/v1/routes/gst.py` to expose `/gst/summary` that aggregates `gst_input`, `gst_output`, and `difference`.
     - User Story: As a profit analyst, I want aggregated metrics so dashboards can chart performance.
       - Tasks:
         - Flesh out `backend/app/services/profit_service.py` to aggregate sales totals, COGS, and expenses, returning gross/net profit.
