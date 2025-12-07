@@ -44,6 +44,10 @@
         - [x] Add `SaleCreate`/`SaleRead` models inside `backend/app/schemas/sale_schema.py` describing sell quantity, rate, GST, COGS, and remaining stock.
         - [x] Implement `backend/app/services/sale_service.py` with FIFO allocation logic that adjusts purchase batches, computes COGS, and persists `Sale` records.
         - [x] Implement `backend/app/api/v1/routes/sales.py` with POST/GET handlers wired to the new service and returning paginated sale data.
+    - User Story: As a backend developer, I want the Phase A APIs covered by automated regression tests before Phase B work begins.
+      - Tasks:
+        - [ ] Add pytest suites under `backend/tests/` that exercise `/items/`, `/purchases/`, and `/sales/` through FastAPI's `TestClient`.
+        - [ ] Provide a data-generation helper script so the tests can bootstrap items, purchase batches, and sales deterministically.
 
 - **Phase B – Business Logic & Analytics**
   - Epic: FIFO + GST engines
