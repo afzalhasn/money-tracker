@@ -35,15 +35,15 @@
         - [x] Implement `backend/app/services/item_service.py` with `create_item`, `get_item`, and `list_items` functions that open a session, call the `Item` model, and return ORM objects.
         - [x] Build `backend/app/api/v1/routes/items.py` to mount a `router = APIRouter(prefix="/items")` exposing `POST /items/` and `GET /items/` using the new service and schemas.
     - User Story: As a backend developer, I need purchases to create FIFO batches so stock tracking begins.
-      - Tasks:
-        - Expand `backend/app/schemas/purchase_schema.py` with `PurchaseCreate` and `PurchaseRead` models covering `item_id`, `quantity`, `rate`, `gst_percent`, `invoice_number`, and timestamps.
-        - Add `backend/app/services/purchase_service.py` with `create_purchase_batch` that persists `PurchaseBatch` and `list_purchase_batches` that returns recent entries.
-        - Wire `backend/app/api/v1/routes/purchases.py` to accept POST payloads, call the service, and emit the `PurchaseRead` response.
+    - Tasks:
+        - [x] Expand `backend/app/schemas/purchase_schema.py` with `PurchaseCreate` and `PurchaseRead` models covering `item_id`, `quantity`, `rate`, `gst_percent`, `invoice_number`, and timestamps.
+        - [x] Add `backend/app/services/purchase_service.py` with `create_purchase_batch` that persists `PurchaseBatch` and `list_purchase_batches` that returns recent entries.
+        - [x] Wire `backend/app/api/v1/routes/purchases.py` to accept POST payloads, call the service, and emit the `PurchaseRead` response.
     - User Story: As a backend developer, I need sales creation to exercise FIFO deductions via a simple endpoint.
       - Tasks:
-        - Add `SaleCreate`/`SaleRead` models inside `backend/app/schemas/sale_schema.py` describing sell quantity, rate, GST, COGS, and remaining stock.
-        - Implement `backend/app/services/sale_service.py` with `create_sale` stub that records a `Sale`.
-        - Implement `backend/app/api/v1/routes/sales.py` with POST/GET handlers hooked to the service.
+        - [x] Add `SaleCreate`/`SaleRead` models inside `backend/app/schemas/sale_schema.py` describing sell quantity, rate, GST, COGS, and remaining stock.
+        - [x] Implement `backend/app/services/sale_service.py` with FIFO allocation logic that adjusts purchase batches, computes COGS, and persists `Sale` records.
+        - [x] Implement `backend/app/api/v1/routes/sales.py` with POST/GET handlers wired to the new service and returning paginated sale data.
 
 - **Phase B – Business Logic & Analytics**
   - Epic: FIFO + GST engines
