@@ -1,5 +1,5 @@
 # backend/app/schemas/document_schema.py
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Optional
 from uuid import UUID
 from datetime import datetime
@@ -18,5 +18,4 @@ class DocumentRead(BaseModel):
     transaction_type: Optional[str]
     uploaded_at: datetime
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)

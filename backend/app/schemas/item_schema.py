@@ -1,5 +1,5 @@
 # backend/app/schemas/item_schema.py
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Optional
 from uuid import UUID
 from datetime import datetime
@@ -26,5 +26,4 @@ class ItemRead(BaseModel):
     cached_stock: int
     created_at: datetime
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)

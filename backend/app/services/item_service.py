@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 def create_item(db: Session, item_in: ItemCreate) -> Item:
     """Persist a new item and return the freshly saved model."""
-    db_item = Item(**item_in.dict())
+    db_item = Item(**item_in.model_dump())
     db.add(db_item)
     db.commit()
     db.refresh(db_item)
