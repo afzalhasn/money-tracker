@@ -3,6 +3,7 @@
 import Card from "@/components/Card";
 import Chart from "@/components/Chart";
 import FeatureTile from "@/components/FeatureTile";
+import Link from "next/link";
 
 const heroStats = [
   { label: "Active SKUs", value: "128", subtext: "inventory tracked" },
@@ -61,12 +62,18 @@ export default function Home() {
             Connect inventory, purchases, sales, and GST through FastAPI while the Next.js frontend renders results driven UI without extra coordination.
           </p>
           <div className="flex flex-wrap gap-3">
-            <button className="rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.4em] text-slate-900 shadow-lg shadow-black/40 transition hover:bg-slate-100">
+            <Link
+              href="/analytics"
+              className="rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.4em] text-slate-900 shadow-lg shadow-black/40 transition hover:bg-slate-100"
+            >
               Explore analytics
-            </button>
-            <button className="rounded-full border border-white/40 px-6 py-3 text-xs font-semibold uppercase tracking-[0.4em] text-white transition hover:border-white">
+            </Link>
+            <Link
+              href="/docs"
+              className="rounded-full border border-white/40 px-6 py-3 text-xs font-semibold uppercase tracking-[0.4em] text-white transition hover:border-white"
+            >
               View API docs
-            </button>
+            </Link>
           </div>
           <div className="grid gap-4 text-sm text-slate-300 sm:grid-cols-3">
             {heroStats.map((stat) => (
