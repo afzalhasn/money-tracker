@@ -2,7 +2,9 @@ import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.pool import StaticPool
 
+import app.db.models  # noqa: F401  # ensure SQLAlchemy models register with Base.metadata
 from app.api.v1.routes import items, purchases, sales
 from app.db.base import Base
 from app.main import create_app
@@ -10,7 +12,9 @@ from app.main import create_app
 SQLALCHEMY_TEST_DATABASE_URL = "sqlite:///:memory:"
 
 engine = create_engine(
-    SQLALCHEMY_TEST_DATABASE_URL, connect_args={"check_same_thread": False}
+    SQLALCHEMY_TEST_DATABASE_URL,
+    connect_args={"check_same_thread": False},
+    poolclass=StaticPool,
 )
 TestingSessionLocal = sessionmaker(
     autocommit=False, autoflush=False, bind=engine
