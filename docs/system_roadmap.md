@@ -101,10 +101,10 @@ We are restarting frontend development from Phase C and intend to execute each p
   - Epic: Shared Layout Framework
     - User Story: As a user, I want a reliable shell (Navbar + Sidebar + Content) so navigation feels stable across screens.
       - Tasks:
-        - Style the Navbar and Sidebar with Tailwind + shadcn Cards/Buttons and Lucide iconography plus hover/active states.
-        - Add responsive behavior so the sidebar collapses gracefully on small screens.
-        - Build shared layout components (`PageContainer`, `PageHeader`, `PageSection`) that encapsulate spacing and backgrounds.
-        - Update `app/layout.tsx` so every page renders inside the global shell built from these helpers.
+        - [x] Style the Navbar and Sidebar with Tailwind + shadcn Cards/Buttons and Lucide iconography plus hover/active states.
+        - [x] Add responsive behavior so the sidebar collapses gracefully on small screens.
+        - [x] Build shared layout components (`PageContainer`, `PageHeader`, `PageSection`) that encapsulate spacing and backgrounds.
+        - [x] Update `app/layout.tsx` so every page renders inside the global shell built from these helpers.
 
 - **Phase E – Dashboard (UI-First, API-Second)**
   - Epic: Stunning Dashboard UI
