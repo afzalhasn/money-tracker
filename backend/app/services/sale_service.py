@@ -5,7 +5,9 @@ from sqlalchemy.orm import Session
 from app.db.models.item import Item
 from app.db.models.sale import Sale
 from app.schemas.sale_schema import SaleCreate
-from app.services.fifo_service import allocate_stock
+from app.factories.inventory_factory import get_inventory_engine
+
+engine = get_inventory_engine()
 
 
 def _compute_total_amount(quantity: int, rate: float, gst_percent: float) -> float:
@@ -22,7 +24,7 @@ def create_sale(db: Session, sale_in: SaleCreate) -> Tuple[Sale, int]:
         raise ValueError("Item does not exist.")
 
     gst_percent = sale_in.gst_percent or 0.0
-    cogs, remaining_stock = allocate_stock(db, sale_in.item_id, sale_in.quantity)
+    cogs, remaining_stock = engine.allocate(db, sale_in.item_id, sale_in.quantity)
     total_amount = _compute_total_amount(sale_in.quantity, sale_in.rate, gst_percent)
     item.cached_stock = remaining_stock
 
