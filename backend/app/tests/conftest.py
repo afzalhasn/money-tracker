@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import StaticPool
 
 import app.db.models  # noqa: F401  # ensure SQLAlchemy models register with Base.metadata
-from app.api.v1.routes import items, purchases, sales
+from app.api.v1.routes import analytics, gst, items, purchases, sales
 from app.db.base import Base
 from app.main import create_app
 
@@ -51,6 +51,8 @@ def test_client():
     app.dependency_overrides[items.get_db] = override_test_db
     app.dependency_overrides[purchases.get_db] = override_test_db
     app.dependency_overrides[sales.get_db] = override_test_db
+    app.dependency_overrides[gst.get_db] = override_test_db
+    app.dependency_overrides[analytics.get_db] = override_test_db
 
     with TestClient(app) as client:
         yield client
