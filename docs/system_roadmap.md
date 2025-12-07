@@ -53,9 +53,9 @@
   - Epic: FIFO + GST engines
     - User Story: As the accounting engine, I want FIFO deduction logic to compute COGS for every sale.
       - Tasks:
-        - Implement `backend/app/services/fifo_service.py` logic to fetch oldest `PurchaseBatch` rows, subtract quantities, and return consumed batches.
-        - Persist COGS results inside `Sale` records during `create_sale`.
-        - Create `backend/app/factories/inventory_factory.py` that exposes the FIFO engine so future LIFO implementations can swap in.
+        - [x] Implement `backend/app/services/fifo_service.py` logic to fetch oldest `PurchaseBatch` rows, subtract quantities, and return consumed batches.
+        - [x] Persist COGS results inside `Sale` records during `create_sale`.
+        - [ ] Create `backend/app/factories/inventory_factory.py` that exposes the FIFO engine so future LIFO implementations can swap in.
     - User Story: As the treasury module, I need GST summaries to capture input/output ledgers.
       - Tasks:
         - Create `backend/app/services/gst_service.py` functions to log `GSTLedger` entries based on purchase/sale payloads.
