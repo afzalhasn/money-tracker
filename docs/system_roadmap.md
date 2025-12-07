@@ -110,11 +110,11 @@ We are restarting frontend development from Phase C and intend to execute each p
   - Epic: Stunning Dashboard UI
     - User Story: As a stakeholder, I want a best-looking dashboard prototype so designers and engineers share a visual benchmark.
       - Tasks:
-        - Implement a reusable `StatCard` (shadcn Card + Lucide icon) with props for `title`, `value`, `description?`, `trend?`, and `icon?`.
-        - Integrate `react-chartjs-2` + Chart.js and expose styled Line/Bar chart components that match the theme.
-        - Build `app/dashboard/page.tsx` using mock data only, showing KPI cards (profit, revenue, expenses, stock value) and 1–2 charts (profit/sales trends).
-        - Add loading skeletons (shadcn Skeleton) for the cards and charts before hooking into APIs.
-        - Avoid backend calls in this phase; focus purely on visual polish and UX interactions.
+        - [x] Implement a reusable `StatCard` (shadcn Card + Lucide icon) with props for `title`, `value`, `description?`, `trend?`, and `icon?`.
+        - [x] Integrate `react-chartjs-2` + Chart.js and expose styled Line/Bar chart components that match the theme.
+        - [x] Build `app/dashboard/page.tsx` using mock data only, showing KPI cards (profit, revenue, expenses, stock value) and 1–2 charts (profit/sales trends).
+        - [x] Add loading skeletons (shadcn Skeleton) for the cards and charts before hooking into APIs.
+        - [x] Avoid backend calls in this phase; focus purely on visual polish and UX interactions.
 
 - **Phase F – Feature Pages (UI-First, Reusable Patterns)**
   - Epic: Consistent CRUD Pages
