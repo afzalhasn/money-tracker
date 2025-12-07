@@ -91,11 +91,11 @@ We are restarting frontend development from Phase C and intend to execute each p
   - Epic: Global Styling & Design Tokens
     - User Story: As a designer, I need a cohesive theme so every page looks modern and consistent.
       - Tasks:
-        - Configure Tailwind CSS in the Next.js app and align it with TypeScript tooling.
-        - Define design tokens via the Tailwind config and `globals.css`, covering colors (background, surface, primary, danger, border, text), typography, spacing, radius, and shadows.
-        - Establish base styles in `globals.css`, including resets, body background, and typography defaults.
-        - Ship core shadcn/ui atoms (Button, Input, Card, Dialog, Dropdown, Skeleton) so every component shares the same foundation.
-        - Create layout utilities (Page container, section header patterns) built from Tailwind + shadcn primitives.
+        - [x] Configure Tailwind CSS in the Next.js app and align it with TypeScript tooling.
+        - [x] Define design tokens via the Tailwind config and `globals.css`, covering colors (background, surface, primary, danger, border, text), typography, spacing, radius, and shadows.
+        - [x] Establish base styles in `globals.css`, including resets, body background, and typography defaults.
+        - [x] Ship core shadcn/ui atoms (Button, Input, Card, Dialog, Dropdown, Skeleton) so every component shares the same foundation.
+        - [x] Create layout utilities (Page container, section header patterns) built from Tailwind + shadcn primitives.
 
 - **Phase D – App Shell, Navigation & Layout**
   - Epic: Shared Layout Framework
