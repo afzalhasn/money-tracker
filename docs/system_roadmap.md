@@ -10,24 +10,6 @@
 - Shared UI bits live in `frontend/components/` (Navbar, Sidebar, Card, Chart, Loader) and `frontend/utils/helpers.ts` (utility functions). `frontend/services/` is the planned API surface (e.g., `apiClient.ts`, `authService.ts`, `analyticsService.ts`) and `frontend/hooks/` (e.g., `useAuth.ts`, `useApi.ts`) will coordinate stored tokens / data fetching scaffolding.
 - The frontend talks to `http://localhost:8000` by default (`frontend/services/apiClient.ts`) and will consume the REST endpoints described in `docs/api_spec.md`.
 
-## Frontend Tech Stack (Guidelines for All Tasks)
-
-All frontend work **must** use this stack:
-
-* **Framework:** Next.js 16 (App Router) + TypeScript
-* **Styling:** Tailwind CSS + custom CSS modules / global CSS where needed
-* **UI Library:** shadcn/ui (Radix-based) for buttons, inputs, dialogs, cards, etc.
-* **Icons:** Lucide icons
-* **Charts:** Chart.js via `react-chartjs-2`
-* **Forms:** React Hook Form + Zod (validation schema per form)
-* **Data Fetching / State:** TanStack Query (React Query) for API calls, caching, loading & error states
-
-> **Rule:** Prefer reusable components and a design-system approach over one-off styles or inline CSS.
-
-## Frontend Execution Sequence
-
-We are restarting frontend development from Phase C and intend to execute each phase in strict order through Phase I. The design-sensitive work (Phase C through E) runs first so that a polished UI/UX foundation exists before wiring each feature page and backend integration. After the visual system settles, we progress through Phase F (mock-first CRUD pages), Phase G (typical service wiring with TanStack Query), Phase H (auth + guards), and Phase I (UX polish), keeping future tasks aligned with the ordered roadmap above.
-
 # Module Breakdown
 
 ## Backend Modules
