@@ -1,7 +1,0 @@
-export default function PurchasesPage() {
-  return (
-    <div className="p-8">
-      <h1 className="text-2xl font-bold">Purchases</h1>
-    </div>
-  );
-}
